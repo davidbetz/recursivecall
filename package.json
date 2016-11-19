@@ -1,0 +1,14 @@
+{
+  "name": "recursivecall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.14.x",
+    "request": "2.79.x"
+  },
+  "devDependencies": {
+    "debug": "2.3.x"
+  }
+}
