@@ -5,10 +5,10 @@
   "main": "app.js",
   "license": "MIT",
   "dependencies": {
-    "express": "4.14.x",
-    "request": "2.79.x"
+    "express": "4.16.2",
+    "request": "2.83.0"
   },
   "devDependencies": {
-    "debug": "2.3.x"
+    "debug": "3.1.0"
   }
 }

@@ -1,0 +1,59 @@
+version: '3'
+services:
+  a:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+    ports:
+      - "3000:3000"
+
+  b:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+      
+  c:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+      
+  d:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+      
+  e:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+      
+  f:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+      
+  g:
+    image: recursivecall
+    environment:
+      - DEBUG=trace
+    networks:
+      - recursivecallnet
+
+networks:
+  recursivecallnet:
+    driver: bridge
+    driver_opts:
+      encrypted: ""
+
