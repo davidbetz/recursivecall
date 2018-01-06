@@ -13,6 +13,9 @@ const call = (address) => {
         const uri = 'http://' + address + ':' + port
         debug('+CALLING ' + uri)
         request.get(uri, async (error, response, body) => {
+            if (error) {
+                reject(500)
+            }
             debug('-CALL RETURNED ' + body)
             resolve(body)
         })
@@ -20,19 +23,31 @@ const call = (address) => {
 }
 
 app.get('/', async (req, res) => {
-    const id = req.headers.host.split(':')[0]
+    let host = req.headers.host.split(':')[0]
+    if (host === 'localhost') {
+        host = process.env.NAME
+        debug('host', host)
+    }
+    const id = host.substring(0, 1)
     const index = abc.indexOf(id)
     debug(`+CALLED id:${id}|index:${index}`)
     let value = '$'
+    start = +new Date()
     if (index > 0) {
-        value = await call(abc[index - 1])
+        try {
+            value = await call(abc[index - 1])
+        }
+        catch (ex) {
+            res
+                .status(500)
+                .send('Error with ' + abc[index - 1])
+            return
+        }
     }
-    value += ':' + id
+    let duration = +(new Date()) - start
+    value += ',' + id + ':' + duration
     debug('-RETURNING ' + value)
     res.send(value)
 })
 
-const server = require('http').Server(app)
-server.listen(app.get('port'), async () => {
-    debug('started')
-})
+app.listen(process.env.PORT || 3000)
