@@ -2,6 +2,8 @@ version: '3'
 services:
   a:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=a
       - DEBUG=trace
@@ -12,6 +14,8 @@ services:
 
   b:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=b
       - DEBUG=trace
@@ -20,6 +24,8 @@ services:
       
   c:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=c
       - DEBUG=trace
@@ -28,6 +34,8 @@ services:
       
   d:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=d
       - DEBUG=trace
@@ -36,6 +44,8 @@ services:
       
   e:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=e
       - DEBUG=trace
@@ -44,6 +54,8 @@ services:
       
   f:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=f
       - DEBUG=trace
@@ -52,6 +64,8 @@ services:
       
   g:
     image: davidbetz/recursivecall:healthcheck-latest
+    deploy:
+      replicas: 3
     environment:
       - NAME=g
       - DEBUG=trace
@@ -60,7 +74,7 @@ services:
 
 networks:
   recursivecallnet:
-    driver: bridge
+    driver: overlay
     driver_opts:
       encrypted: ""
 
