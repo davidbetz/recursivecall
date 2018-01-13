@@ -2,6 +2,8 @@ version: '3'
 services:
   a:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -11,6 +13,8 @@ services:
 
   b:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -18,6 +22,8 @@ services:
       
   c:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -25,6 +31,8 @@ services:
       
   d:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -32,6 +40,8 @@ services:
       
   e:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -39,6 +49,8 @@ services:
       
   f:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -46,6 +58,8 @@ services:
       
   g:
     image: davidbetz/recursivecall
+    deploy:
+      replicas: 3
     environment:
       - DEBUG=trace
     networks:
@@ -53,7 +67,7 @@ services:
 
 networks:
   recursivecallnet:
-    driver: bridge
+    driver: overlay
     driver_opts:
       encrypted: ""
 
