@@ -44,8 +44,13 @@ app.get('/', async (req, res) => {
             return
         }
     }
-    let duration = +(new Date()) - start
-    value += ',' + id + ':' + duration
+    if (process.env.TIMER) {
+        let duration = +(new Date()) - start
+        value += ',' + id + ':' + duration
+    }
+    else {
+        value += ',' + id
+    }
     debug('-RETURNING ' + value)
     res.send(value)
 })
