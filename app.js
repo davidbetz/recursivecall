@@ -1,3 +1,5 @@
+"use strict"
+
 const debug = require('debug')('trace')
 const express = require("express")
 const request = require('request')
@@ -24,10 +26,17 @@ app.get('/', async (req, res) => {
     const index = abc.indexOf(id)
     debug(`+CALLED id:${id}|index:${index}`)
     let value = '$'
+    let start = +new Date()
     if (index > 0) {
         value = await call(abc[index - 1])
     }
-    value += ':' + id
+    if (process.env.TIMER) {
+        let duration = +(new Date()) - start
+        value += ',' + id + ':' + duration
+    }
+    else {
+        value += ',' + id
+    }
     debug('-RETURNING ' + value)
     res.send(value)
 })
