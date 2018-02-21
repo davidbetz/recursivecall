@@ -8,8 +8,6 @@ services:
       - DEBUG=trace
     networks:
       - recursivecallnet
-    ports:
-      - "3000:3000"
 
   b:
     image: davidbetz/recursivecall
@@ -64,10 +62,11 @@ services:
       - DEBUG=trace
     networks:
       - recursivecallnet
+    ports:
+      - "3000:3000"
 
 networks:
   recursivecallnet:
     driver: overlay
     driver_opts:
       encrypted: ""
-
