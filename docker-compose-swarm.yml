@@ -9,8 +9,6 @@ services:
       - DEBUG=trace
     networks:
       - recursivecallnet
-    ports:
-      - "3000:3000"
 
   b:
     image: davidbetz/recursivecall:healthcheck-latest
@@ -71,6 +69,8 @@ services:
       - DEBUG=trace
     networks:
       - recursivecallnet
+    ports:
+      - "3000:3000"
 
 networks:
   recursivecallnet:
