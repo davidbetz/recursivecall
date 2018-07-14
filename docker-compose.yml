@@ -5,7 +5,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
 
@@ -14,7 +14,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
       
@@ -23,7 +23,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
       
@@ -32,7 +32,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
       
@@ -41,7 +41,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
       
@@ -50,7 +50,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
       
@@ -59,7 +59,7 @@ services:
     environment:
       - DEBUG=trace
     volumes:
-      /lib64/:/lib64/
+      - /lib64/:/lib64/
     networks:
       - recursivecallnet
     ports:
