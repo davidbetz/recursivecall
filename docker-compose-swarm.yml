@@ -4,6 +4,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -13,6 +15,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -22,6 +26,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -31,6 +37,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -40,6 +48,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -49,6 +59,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
@@ -58,6 +70,8 @@ services:
     image: davidbetz/recursivecall
     deploy:
       replicas: 3
+    volumes:
+      /lib64/:/lib64/
     environment:
       - DEBUG=trace
     networks:
