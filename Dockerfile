@@ -1,20 +1,19 @@
-FROM node:8.9-alpine
+FROM node:10-alpine
 
 LABEL maintainer "dfb@davidbetz.net"
 
+WORKDIR /var/app
+
 RUN addgroup -S recursivecall && \
-    adduser -S -G recursivecall recursivecall && \
-    apk add --no-cache curl && rm -rf /var/cache/apk/*
+    adduser -S -G recursivecall recursivecall
 
 RUN npm install pm2 -g
 
-WORKDIR /var/app
-
-COPY package.json /var/app
+COPY package.json .
 
 RUN npm install
 
-COPY . /var/app
+COPY . .
 
 ENV PORT=3000
 
@@ -22,4 +21,4 @@ EXPOSE $PORT
 
 USER recursivecall:recursivecall
 
-ENTRYPOINT  ["pm2", "start", "-x", "app.js", "--name=recursivecall", "--no-daemon", "--watch"]
+CMD  ["pm2", "start", "-x", "app.js", "--name=recursivecall", "--no-daemon", "--watch"]

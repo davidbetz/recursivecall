@@ -4,11 +4,11 @@
   "description": "",
   "main": "app.js",
   "license": "MIT",
-  "dependencies": {
-    "express": "4.16.2",
-    "request": "2.83.0"
-  },
   "devDependencies": {
-    "debug": "3.1.0"
+    "debug": "4.1.0"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "request": "2.88.0"
   }
 }
